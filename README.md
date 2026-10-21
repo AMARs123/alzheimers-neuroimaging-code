@@ -6,8 +6,9 @@ amyloid / tau PET from the NACC SCAN cohort, with OASIS-1 as an external MRI coh
 All image features are extracted by our own pipeline (FastSurfer segmentation, ANTs PET-to-MRI registration,
 regional SUVR). No precomputed tabular imaging features are used as predictors.
 
-> **Status:** the manuscripts are under peer review. This repository holds the code and a short description of each
-> analysis only. Figures, numerical results and manuscripts will be added or linked after publication.
+> **Note:** the articles are currently being submitted to journals. This repository contains **code only**: no paper,
+> no manuscript or other documents, no images or figures, no data and no numerical results. These will be linked
+> after publication.
 
 ## Studies
 
