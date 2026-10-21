@@ -1,0 +1,25 @@
+# Data and participant-level outputs are never committed (NACC data use agreement)
+*.nii
+*.nii.gz
+*.dcm
+*.npy
+*.csv
+*.csv.gz
+*.json
+*.pkl
+*.joblib
+*.pt
+*.p
+*.png
+*.jpg
+*.pdf
+*.docx
+*.zip
+data/
+experiments/
+results/
+figures/
+work/
+logs/
+__pycache__/
+id_*

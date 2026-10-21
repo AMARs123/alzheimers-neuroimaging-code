@@ -1,0 +1,13 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+joblib
+lightgbm
+xgboost
+catboost
+shap
+antspyx
+pydicom
+torch  # optional, deep-feature ablation only
