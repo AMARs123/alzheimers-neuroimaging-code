@@ -14,11 +14,11 @@ regional SUVR). No precomputed tabular imaging features are used as predictors.
 
 | Folder | Question | Data |
 |---|---|---|
-| [`01_multimodal_mri_pet`](01_multimodal_mri_pet) | Do amyloid and tau PET add to MRI for normal / MCI / dementia staging when several PET tracers are mixed? | NACC SCAN MRI + amyloid PET + tau PET; OASIS-1 (MRI) |
-| [`02_pet_tracer_harmonisation`](02_pet_tracer_harmonisation) | Can our own amyloid and tau PET measurements be put on common scales across seven tracers, and how do the resulting A/T profiles match the clinical diagnosis? | NACC SCAN amyloid and tau PET |
-| [`03_mri_regional_atrophy`](03_mri_regional_atrophy) | Which brain regions show atrophy in MCI and dementia, does the pattern replicate in a second cohort, and how much does each region group add to classification? | NACC SCAN T1 MRI; OASIS-1 |
+| [`multimodal-mri-pet-staging`](multimodal-mri-pet-staging) | Do amyloid and tau PET add to MRI for normal / MCI / dementia staging when several PET tracers are mixed? | NACC SCAN MRI + amyloid PET + tau PET; OASIS-1 (MRI) |
+| [`pet-tracer-harmonisation`](pet-tracer-harmonisation) | Can our own amyloid and tau PET measurements be put on common scales across seven tracers, and how do the resulting A/T profiles match the clinical diagnosis? | NACC SCAN amyloid and tau PET |
+| [`mri-regional-atrophy`](mri-regional-atrophy) | Which brain regions show atrophy in MCI and dementia, does the pattern replicate in a second cohort, and how much does each region group add to classification? | NACC SCAN T1 MRI; OASIS-1 |
 
-The three studies share one image-processing pipeline (in `01_multimodal_mri_pet/src/preprocessing`). Studies 2 and 3
+The three projects share one image-processing pipeline (in `multimodal-mri-pet-staging/src/preprocessing`). The PET and MRI-regional projects
 start from the feature tables it produces.
 
 ## Pipeline at a glance
@@ -33,9 +33,9 @@ amyloid / tau PET (SCAN standardised series) ───┴──ANTs rigid (MI)�
                                              regional SUVR + composites
                                                          │
           ┌──────────────────────────────┬───────────────┴───────────────────┐
-   Study 1: nested CV classifiers   Study 2: Centiloid / tau z      Study 3: regional effect sizes,
-   (MRI vs MRI+PET, tracer-aware    common scales, A/T profiles     region-group models, asymmetry,
-   standardisation, external test)  vs diagnosis                    two-cohort replication
+   Multimodal: nested CV            PET: Centiloid / tau z          MRI regional: effect sizes,
+   classifiers (MRI vs MRI+PET,     common scales, A/T profiles     region-group models, asymmetry,
+   tracer-aware z, external test)   vs diagnosis                    two-cohort replication
 ```
 
 ## Design principles
